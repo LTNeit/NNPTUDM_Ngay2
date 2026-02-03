@@ -17,50 +17,52 @@ let products = [
 ];
 
 function nameAndPrice(products) {
+    console.log("Câu 3");
     let nameAndPrice = products.map(p => ({ name: p.name, price: p.price }));
     console.log(nameAndPrice);
 }
 
 function availableProducts(products) {
+    console.log("Câu 4");
     let available = products.filter(p => p.quantity > 0);
     console.log(available);
 }
 
 function checkPrice(products){
+    console.log("Câu 5");
     let price = products.filter(p => p.price >= 30000000);
     console.log(price);
 }
 
 function checkCategoryIsAvailable(products){
+    console.log("Câu 6");
     let category = products.filter(p => p.category === "Phụ Kiện" && p.isAvailable);
     console.log(category);
 }
 
 function totalValue(products){
+    console.log("Câu 7");
     let total = products.reduce((sum, p) => sum + (p.price * p.quantity), 0);
     console.log("Tổng giá trị hàng tồn kho:", total);
 }
 
 function printProductsOf(products) {
+    console.log("Câu 8");
     for(let p of products) {
         console.log('Tên sản phẩm:', p.name + ' |Danh mục:', p.category + ' |Trạng thái:', p.isAvailable ? 'Đang bán' : 'Ngừng bán');
     }
 }
 
-function printProductsIn(product) {
-    console.log("Tên thuộc tính:");
-    for (let key in product) {
-        console.log(key);
-    }
-
-    console.log("Giá trị tương ứng:");
-    for (let key in product) {
-        console.log(product[key]);
+function printProductsIn(products) {
+    console.log("Câu 9");
+    for (let key in products) {
+        console.log(products[key]);
     }
 }
 
 
 function printAvailableQuantity(products){
+    console.log("Câu 10");
     for(let p of products) {
         if(p.quantity > 0 && p.isAvailable) {
             console.log('Tên sản phẩm:', p.name);
